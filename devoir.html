@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de mot de pass</title>
+</head>
+<body>
+    <button id="myButton" class="custom-button">Cliquez ici</button>
+    <script>
+        var button = document.getElementById("myButton");
+    
+        button.addEventListener("click", function() {
+          button.style.backgroundColor = "pink";
+          button.innerHTML = "Cliqué!";
+        });
+        function generatePassword(){
+        var password = "";
+         var allowedChars = "0123456789";
+    
+     for(var i = 0 ; i < 6; i++){
+        var randomIndex = Math.floor(Math.random() * allowedChars.length);
+        password += allowedChars[randomIndex];
+     }
+
+      return password;
+        }
+
+         var generatedPassword = generatePassword();
+        console.log(generatedPassword);                             
+    </script>
+</body>
+</html>
